@@ -5,3 +5,4 @@ rsconnect/
 *.Rproj
 
 www/.DS_Store
+.Rproj.user

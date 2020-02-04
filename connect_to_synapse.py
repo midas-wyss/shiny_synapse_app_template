@@ -30,13 +30,12 @@ def get_synapse_teams(user_id):
   
 def create_prod_client():
   
-  # Client ID 100038
   client_meta_data = {
-    'client_name': 'Predictive BioAnalytics at Wyss Institute',
+    'client_name': '<YOUR NAME HERE>',
     'redirect_uris': [
-      'https://wyss.shinyapps.io/shiny_synapse/'
+      '<YOUR URI HERE>'
     ],
-    'client_uri': 'https://wyss.shinyapps.io/shiny_synapse/'
+    'client_uri': '<YOUR URI HERE>'
   }
   
   # Create the client:
@@ -52,9 +51,8 @@ def create_prod_client():
   
 def create_local_client():
   
-  # Client ID 100040
   client_meta_data = {
-    'client_name': 'Predictive BioAnalytics at Wyss Institute Local Testing',
+    'client_name': '<YOUR LOCAL NAME HERE>',
     'redirect_uris': [
       'http://127.0.0.1:7450'
     ]
@@ -71,8 +69,6 @@ def create_local_client():
     endpoint=syn.authEndpoint, body='')
   return(client_id_and_secret)
 
-#my_profile = syn.getUserProfile() 
-#freds_profile = syn.getUserProfile(‘fredcommo’)
  
 """ 
 # To change client meta-data
