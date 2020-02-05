@@ -5,7 +5,10 @@
 #### System Requirements
 
 * Python 3
-* R
+
+* [virtualenv](https://virtualenv.pypa.io/en/latest/) (`pip install virtualenv`)
+
+* R and RStudio
 
 ### Local Development Instructions
 
@@ -32,13 +35,14 @@ In addition to the client secrets, include your Synapse username and API key. Yo
 
 The []`synapser` R package](https://github.com/Sage-Bionetworks/synapser) developed by Sage Bionetworks depends on the older `PythonEmbedInR` package, which has compatibility issues. For this reason, this app interacts with the Synapse API using the [Synapse Python client](https://python-docs.synapse.org/build/html/) and uses the R package `reticulate` to call that Python code via the Shiny server.
 
-Create
+Use the `reticulate` package to create a Python 3 virtualenv and install Python packages `synapseclient` and `requests` into it. In the R console:
 
 ```
-reticulate::virtualenv_create(envname = 'python35_env',
-                              python = '/usr/bin/python3')
-reticulate::virtualenv_install('python35_env',
-                                packages = c('synapseclient', 'requests'))
+> reticulate::virtualenv_create(envname = 'python35_env',
+                                python = '/usr/bin/python3')
+
+> reticulate::virtualenv_install('python35_env',
+                                 packages = c('synapseclient', 'requests'))
 ```
 
 Note: Avoid running `library(reticulate)` as this will cause `reticulate` to initialize in the R session with your system version of Python rather than the one specified in the `python` arg of `virtualenv_create()`. If this happens, you may see an error similar to:
@@ -59,14 +63,14 @@ In RStudio, open `app.py` and click the "Run App" button or run `shiny::runApp()
 Sensitive data like passwords and secret keys should never be checked into git in cleartext (unencrypted). If you need to store sensitive info, you can use the openssl cli to encrypt and decrypt the file.
 
 #### Encrypt a file with shared secret
-For local development, ideally we can settle on a single shared secret we'll use for all the encrypted files, ask around.
+For local development, ideally we can settle on a single shared secret we'll use for all the encrypted files, ask around. In the terminal:
 
 ```
-openssl enc -aes256 -base64 -in .Renviron -out .Renviron.encrypted
+$ openssl enc -aes256 -base64 -in .Renviron -out .Renviron.encrypted
 ```
 
 #### Decrypt a file with shared secret
 
 ```
-openssl enc -d -aes256 -base64 -in .Renviron.encrypted -out .Renviron
+$ openssl enc -d -aes256 -base64 -in .Renviron.encrypted -out .Renviron
 ```
