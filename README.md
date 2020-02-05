@@ -33,7 +33,7 @@ In addition to the client secrets, include your Synapse username and API key. Yo
 
 ### Create the local virtual environment (first time set-up only)
 
-The []`synapser` R package](https://github.com/Sage-Bionetworks/synapser) developed by Sage Bionetworks depends on the older `PythonEmbedInR` package, which has compatibility issues. For this reason, this app interacts with the Synapse API using the [Synapse Python client](https://python-docs.synapse.org/build/html/) and uses the R package `reticulate` to call that Python code via the Shiny server.
+The [`synapser` R package](https://github.com/Sage-Bionetworks/synapser) developed by Sage Bionetworks depends on the older `PythonEmbedInR` package, which has compatibility issues. For this reason, this app interacts with the Synapse API using the [Synapse Python client](https://python-docs.synapse.org/build/html/) and uses the R package `reticulate` to call that Python code via the Shiny server.
 
 Use the `reticulate` package to create a Python 3 virtualenv and install Python packages `synapseclient` and `requests` into it. In the R console:
 
