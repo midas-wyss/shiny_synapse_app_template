@@ -1,8 +1,8 @@
 # Template: Shiny app using Synapse authentication
 
-### Prerequisites
+## Prerequisites
 
-#### System Requirements
+### System Requirements
 
 * Python 3
 
@@ -10,9 +10,9 @@
 
 * R and RStudio
 
-### Local Development Instructions
+## Local Development Instructions
 
-#### User authentication with Synapse
+### User authentication with Synapse
 
 This app uses Synapse as an OAuth 2.0 server, enabling users to log in with their Synapse credentials, with their consent.
 
@@ -31,7 +31,7 @@ SYN_API_KEY=<synape API key>
 
 In addition to the client secrets, include your Synapse username and API key. Your API key can be found in Synapse under Profile > Settings > Synapse API Key.
 
-#### Create the local virtual environment (first time set-up only)
+### Create the local virtual environment (first time set-up only)
 
 The []`synapser` R package](https://github.com/Sage-Bionetworks/synapser) developed by Sage Bionetworks depends on the older `PythonEmbedInR` package, which has compatibility issues. For this reason, this app interacts with the Synapse API using the [Synapse Python client](https://python-docs.synapse.org/build/html/) and uses the R package `reticulate` to call that Python code via the Shiny server.
 
@@ -54,22 +54,22 @@ another version of Python ('/usr/bin/python') has already been initialized.
 
 If you see this error, restart your R session and run the two commands above to create your virtual environment.
 
-#### Running the app
+### Running the app
 
 In RStudio, open `app.py` and click the "Run App" button or run `shiny::runApp()` in the console. Open a web browser and go to `http://127.0.0.1:7450` to see the app.
 
-### Secrets
+## Secrets
 
 Sensitive data like passwords and secret keys should never be checked into git in cleartext (unencrypted). If you need to store sensitive info, you can use the openssl cli to encrypt and decrypt the file.
 
-#### Encrypt a file with shared secret
+### Encrypt a file with shared secret
 For local development, ideally we can settle on a single shared secret we'll use for all the encrypted files, ask around. In the terminal:
 
 ```
 $ openssl enc -aes256 -base64 -in .Renviron -out .Renviron.encrypted
 ```
 
-#### Decrypt a file with shared secret
+### Decrypt a file with shared secret
 
 ```
 $ openssl enc -d -aes256 -base64 -in .Renviron.encrypted -out .Renviron
