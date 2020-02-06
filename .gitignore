@@ -3,6 +3,7 @@
 .Renviron
 rsconnect/
 *.Rproj
+.Rhistory
 
 www/.DS_Store
 .Rproj.user
