@@ -5,5 +5,8 @@ if (!Sys.info()[['sysname']] == 'Darwin'){
   # Set local debug to false
   Sys.setenv(DEBUG = FALSE) 
 } else{
+  # Running locally, use the local virtualenv
+  options(shiny.port = 7450)
+  reticulate::use_virtualenv('python35_env', required = T)
   Sys.setenv(DEBUG = TRUE)
 }

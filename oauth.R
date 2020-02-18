@@ -9,12 +9,12 @@ CLIENT_SECRET = NULL
 if (DEBUG){
   # Local testing
   options(shiny.port = 7450)
-  APP_URL = 'http://127.0.0.1:7450'
+  APP_URL = Sys.getenv('APP_URL_LOCAL')
   CLIENT_ID = Sys.getenv('CLIENT_ID_LOCAL')
   CLIENT_SECRET = Sys.getenv('CLIENT_SECRET_LOCAL')
 } else{
   # Deployed
-  APP_URL = 'https://wyss.shinyapps.io/shiny_synapse/'
+  APP_URL = Sys.getenv('APP_URL')
   CLIENT_ID = Sys.getenv('CLIENT_ID')
   CLIENT_SECRET = Sys.getenv('CLIENT_SECRET')
 }
