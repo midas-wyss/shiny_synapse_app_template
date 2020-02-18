@@ -2,6 +2,14 @@
 
 A Shiny app demonstrating how to use Synapse as an OAuth 2.0 server, enabling users to log in with their Synapse credentials, with their consent. A live demo can be seen [here](https://wyss.shinyapps.io/shiny_synapse/).
 
+<br>
+
+<p align="center">
+<img src="https://cdn.brandfolder.io/TLCWDQBL/as/q5x49y-b9da0w-9kuh1u/shiny_synapse_demo.gif" width="600">
+</p>
+
+<br>
+
 ## Prerequisites
 
 ### System Requirements
