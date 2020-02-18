@@ -25,7 +25,7 @@ AnonymousUI <- fluidPage(
   br(),
   
   div("Don't have a Synapse account yet? Follow the ",
-      a(href = 'https://midas-wyss.github.io/synapse_instructions_ingber.html',
+      a(href = 'https://midas-wyss.github.io/synapse_instructions_predictive_bioanalytics.html',
         'instructions for registering here'),
       '.', style='text-align: center;')
 )
