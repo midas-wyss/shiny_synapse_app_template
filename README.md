@@ -1,5 +1,7 @@
 # Template: Shiny app using Synapse authentication
 
+A Shiny app demonstrating how to use Synapse as an OAuth 2.0 server, enabling users to log in with their Synapse credentials, with their consent. A live demo can be seen [here](https://wyss.shinyapps.io/shiny_synapse/).
+
 ## Prerequisites
 
 ### System Requirements
@@ -12,9 +14,7 @@
 
 ## Local Development Instructions
 
-### User authentication with Synapse
-
-This app uses Synapse as an OAuth 2.0 server, enabling users to log in with their Synapse credentials, with their consent.
+### Register new Synapse OAuth 2.0 client
 
 First, [create and register your OAuth 2.0 client](https://docs.synapse.org/articles/using_synapse_as_an_oauth_server.html) with Synapse. Create one client for local testing and another one for production. (The `create_prod_client()` and `create_local_client()` functions in `connect_to_synapse.py` can be used for this - simply modify them with your own app name and redirect uris.)
 
@@ -27,6 +27,8 @@ CLIENT_ID_LOCAL=<client id for local testing>
 CLIENT_SECRET_LOCAL=<client secret for local testing>
 SYN_USERNAME=<synapse username>
 SYN_API_KEY=<synape API key>
+APP_URL_LOCAL="http://127.0.0.1:7450"
+APP_URL=<target URL when deployed>
 ```
 
 In addition to the client secrets, include your Synapse username and API key. Your API key can be found in Synapse under Profile > Settings > Synapse API Key.
