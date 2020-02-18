@@ -73,7 +73,6 @@ In RStudio, open `app.py` and click the "Run App" button or run `shiny::runApp()
 Sensitive data like passwords and secret keys should never be checked into git in cleartext (unencrypted). If you need to store sensitive info, you can use the openssl cli to encrypt and decrypt the file.
 
 ### Encrypt a file with shared secret
-For local development, ideally we can settle on a single shared secret we'll use for all the encrypted files, ask around. In the terminal:
 
 ```
 $ openssl enc -aes256 -base64 -in .Renviron -out .Renviron.encrypted
@@ -84,3 +83,13 @@ $ openssl enc -aes256 -base64 -in .Renviron -out .Renviron.encrypted
 ```
 $ openssl enc -d -aes256 -base64 -in .Renviron.encrypted -out .Renviron
 ```
+
+<br>
+
+## Acknowledgements / Additional Resources
+
+* Thanks to [Bruce Hoff](https://github.com/brucehoff) for being responsive answering questions about the Synapse REST API. His Shiny + Synapse OAuth [demo app is here](https://github.com/brucehoff/ShinyOAuthExample).
+
+* Sage Bionetworks also has their own [SynapseShinyApp here](https://github.com/Sage-Bionetworks/SynapseShinyApp)
+
+* See the full [Synapse REST API docs](https://rest-docs.synapse.org/rest/index.html) for detailed explanations of all available endpoints
