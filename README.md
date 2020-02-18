@@ -26,7 +26,7 @@ A Shiny app demonstrating how to use Synapse as an OAuth 2.0 server, enabling us
 
 First, [create and register your OAuth 2.0 client](https://docs.synapse.org/articles/using_synapse_as_an_oauth_server.html) with Synapse. Create one client for local testing and another one for production. (The `create_prod_client()` and `create_local_client()` functions in `connect_to_synapse.py` can be used for this - simply modify them with your own app name and redirect uris.)
 
-After your clients have been activated by the Synapse team, store their IDs and secrets in an .Renvironment file in the project directory with the following format:
+After your clients have been activated by the Synapse team, store their IDs and secrets in an `.Renviron` file in the project directory with the following format:
 
 ```
 CLIENT_ID=<client id>
@@ -90,6 +90,6 @@ $ openssl enc -d -aes256 -base64 -in .Renviron.encrypted -out .Renviron
 
 * Thanks to [Bruce Hoff](https://github.com/brucehoff) for being responsive answering questions about the Synapse REST API. His Shiny + Synapse OAuth [demo app is here](https://github.com/brucehoff/ShinyOAuthExample).
 
-* Sage Bionetworks also has their own [SynapseShinyApp here](https://github.com/Sage-Bionetworks/SynapseShinyApp)
+* Sage Bionetworks also has their own Synapse Shiny App [here](https://github.com/Sage-Bionetworks/SynapseShinyApp).
 
-* See the full [Synapse REST API docs](https://rest-docs.synapse.org/rest/index.html) for detailed explanations of all available endpoints
+* See the full [Synapse REST API docs](https://rest-docs.synapse.org/rest/index.html) for detailed explanations of all available endpoints.
